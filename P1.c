@@ -2,40 +2,62 @@
 //matricula:11721ELL012
 #include <stdio.h>
 
-
-int main()
+int main ()
 {
-	int cont=0,i,estado=0;
-	char num[30];
-	do
+	int estado=0, i=0; 
+	char bits[256];
+  
+	printf ("Digite um numero binario: ");
+	scanf ("%s", bits);
+	
+	while(bits[i] != '\0') 
 	{
-		cont=0;
-		printf("Digite um numero binario: ");
-		scanf("%s",&num);
-		for(i=0; num[i]!='\0';i++)
+		if (estado == 0 && bits[i] == '0')
 		{
-			if(num[i]!='0' && num[i]!='1')
-			    cont++;
+			estado = 0; 
+			i++;
 		}
-	}while(cont!=0);
-	for(i=0; num[i]!='\0';i++)
-	{
-		if(estado==0 && num[i]=='0')
-		    estado=0;
-		else if(estado==0 && num[i]=='1')
-		    estado=1;
-		else if(estado==1 && num[i]=='1')
-		    estado=0;
-		else if(estado==1 && num[i]=='0')
-		    estado=2;
-		else if(estado==2 && num[i]=='0')
-		    estado=1;
-		else if(estado==2 && num[i]=='1')
-		    estado=2;   
+		
+		if (estado == 0 && bits[i] != '0') 
+		{
+			estado = 1;
+			i++;
+		}
+		
+		if (estado == 1 && bits[i] == '0')
+		{
+			estado = 2; 
+			i++;
+		}
+		
+		if (estado == 1 && bits[i] != '0')
+		{
+			estado = 0;
+			i++;
+		}
+		
+		if (estado == 2 && bits[i] == '0')
+		{
+			estado = 1; 
+			i++;
+		}
+		if (estado == 2 && bits[i] != '0')
+		{
+			estado = 2;
+			i++;
+		}
+		
 	}
-	if(estado==0)
-	     printf("\nO numero %s  e multiplo de 3",num);
-	else     
-          printf("\nO numero %s NAO e multiplo de 3",num);
-    return 0;	
+	
+	if (estado == 0)
+	{
+		printf ("O numero eh multiplo de 3.");
+	}
+	else 
+	{
+		printf ("O numero nao eh multiplo de 3.");
+	}
+	
+	printf ("O numero digitado eh: %s", bits);
+	return 0;
 }
