@@ -1,5 +1,6 @@
-//juliana santana de almeida 
-//matricula:11721ELL012
+//Juliana Santana de Almeida
+// Matricula: 11721EEL012
+
 #include <stdio.h>
 
 int main ()
