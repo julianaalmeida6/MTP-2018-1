@@ -1,5 +1,5 @@
 //Juliana Santana de Almeida
-//Matricula:11721EEl012
+// Matricula: 11721EEL012
 
 #include<stdio.h>
 void decimalbinario(int num)
@@ -28,7 +28,7 @@ void decimalbinario(int num)
  int main()
  {
  	int  operacao,i, num,d=1,dec=0;
- 	printf("Escolha entre as seguintes opções de conversao:\n1- Binario para Decimal"
+ 	printf("Escolha entre as seguintes opÃ§Ãµes de conversao:\n1- Binario para Decimal"
 	 "\n2-Binario para hexadecimal \n3-Hexadecimal para Decimal  \n4-Hexadecimal para Binario"
 	 "\n5-Decimal para Binario  \n6-Decimal para Hexadecimal  \n7-Octal para Decimal \n8-Decimal para octal\n ");
     scanf("%d",&operacao);getchar();
