@@ -1,5 +1,5 @@
 //Juliana Santana de Almeida
-//Matricula:11721EEl012
+// Matricula: 11721EEL012
 
 #include<stdio.h>
 void printbits(unsigned int num, int len) 
@@ -17,7 +17,7 @@ void printbits(unsigned int num, int len)
  {
  	int  operacao,i, num,d=1,dec=0,nb ,aux=0,num2,x,y, resultado;
  	char bin[256],argumento2[256];
- 	printf("Escolha entre as seguintes opções de Calculo em Bitwise: \n1- NOT"
+ 	printf("Escolha entre as seguintes opÃ§Ãµes de Calculo em Bitwise: \n1- NOT"
 	 "\n2-AND \n3-OR  \n4-XOR"
 	 "\n5-Right Shift  \n6-Left Shift  \n");
     scanf("%d",&operacao);getchar();
