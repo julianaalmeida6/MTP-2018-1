@@ -1,52 +1,40 @@
 //Juliana Santana de Almeida
 // Matricula: 11721EEL012
 
-#include <stdio.h>
+#include<stdio.h>
 
-int main()
-{	char str[256];
-	char *p;
-	int i, cont, txt[256], opcao;
-	int *ps;
+int main(){
+	char str[256]={'\0'},*p,*msg=str;
+	int op,i=0,*ps,k[64];
 	do{
-	do{printf("MENU: \n1 - Criptografar \n2 - Deografar \n3 - Sair do programa \nSua opcao eh: ");
-	scanf("%d", &opcao);
-	getchar();}while(opcao!=1 && opcao!=2 && opcao!=3);
-	i = 0;
-	switch(opcao)
-	{	case 1:
-			for(i=0; i<256; i++){ str[i] = '\0'; }
-			printf("Digite uma informacao textual: ");
-			fgets(str, 256, stdin);
-			for(cont=0; str[cont] != '\0'; cont++);	
-			ps = (int*)str;
-			printf("\nFrase criptografada: \n");
-			for(i=0; i<cont; i++)	
-			{	if(*(ps+i) != 0 )
-				{	printf("%i ", *(ps+i));	}	} 
+		printf("1-CODIFICAR;\n2-DECODIFICAR;\n3-SAIR\n\n");
+		scanf("%d",&op);
+		switch(op){
+		case 1:
+			printf("\n\ndigite uma mensagem para ser codificada: \n");
+			scanf("%s",str);
+			getchar();
+			for(i=0;str[i];i++){
+				ps=(int *)msg;
+				if(ps[i]!=0)
+					printf("%d",ps[i]);
+				if(ps[i+1]!=0)
+					printf(", ");}
+					printf("\n\n");
 			break;
-			
 		case 2:
-			printf("Quando quiser encerrar a sequencia de numeros, entre com 0\n");
-			p = (char*)txt;
-			i=0; cont=0;
-			printf("Digite uma sequencia de numeros: \n");
-			do
-			{	scanf("%d", &cont);
-	 			getchar();
-				txt[i] = cont;
-				i++;
-			}while(cont != 0);
-			p = (char*)&txt;
-			printf("\nFrase deografada: \n");
-			for(i=0; i<sizeof(txt) && *(p+i) != 0; i++)
-			{	printf("%c", *(p+i));		}
-			break;
-
-		default:
+			printf("\n\ndigite uma mensagem para ser decodificada(digite enter depois 0): \n");
+			printf("\nDigite uma mensagem: ");
+			for(i=0;i<64;i++){
+				scanf("%d",&k[i]);
+				getchar();
+				p=(char *)k;
+				if(k[i]==0)
+					break;}
+				printf("%s",p);
+				printf("\n\n");
 			break;
 	}
-	printf("\n\n");
-	}while(opcao != 3);
+	}while(op!=3);
 	return 0;
 }
